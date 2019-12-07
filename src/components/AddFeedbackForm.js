@@ -29,6 +29,15 @@ export default function AddFeedbackForm({ onCancel, onSubmit, initialValues = {}
   function onTextChange(event) {
     setText(event.target.value);
   }
+
+  function handleFormSubmit() {
+    const DEFAULT_NAME = "Anonymous";
+    onSubmit({
+      score,
+      name: name || DEFAULT_NAME,
+      text
+    });
+  }
   
   const likeClicked = score && score > 0;
   const dislikeClicked = score && score < 0;  
@@ -77,10 +86,18 @@ export default function AddFeedbackForm({ onCancel, onSubmit, initialValues = {}
         />
       </DialogContent>
       <DialogActions>
-      <Button color="default">
+      <Button 
+        color="default"
+        onClick={onCancel}
+      >
           Cancel
         </Button>
-        <Button color="primary" variant="contained">
+        <Button
+          onClick={handleFormSubmit}
+          color="primary"
+          variant="contained"
+          disabled={score == null}
+        >
           Submit
         </Button>
       </DialogActions>
