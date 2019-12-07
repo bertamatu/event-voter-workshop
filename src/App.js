@@ -32,7 +32,7 @@ function App() {
           </div>
           <div className="sub-section">
             <PageBox>
-              <Dashboard/>
+              <Dashboard feedbackList={feedbackList}/>
             </PageBox>
           </div>
         </div>
