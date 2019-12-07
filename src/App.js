@@ -13,11 +13,15 @@ function App() {
   const eventId = 'WUWz6xmSzbk';
   return (
       <div>
-        <PageBox>PageBox demo turinys</PageBox>
-        <FeedbackList feedbackList={feedbackList}/>
-        <VideoStream
-         videoUrl={`https://www.youtube.com/embed/${eventId}?controls=0`}
-       />
+        <PageBox>
+          <FeedbackList feedbackList={feedbackList}/>
+        </PageBox>
+        <PageBox>
+          <VideoStream
+            videoUrl={`https://www.youtube.com/embed/${eventId}?controls=0`}
+          />
+        </PageBox>
+        <PageBox>Renginio rezultatai</PageBox>
       </div>
   );
 }
