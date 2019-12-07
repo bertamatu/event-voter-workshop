@@ -11,6 +11,8 @@ import Button from '@material-ui/core/Button';
 
 export default function AddFeedbackForm({ onCancel, onSubmit, initialValues = {} }) {
   const [score, setScore] = useState(initialValues.score);
+  const [name, setName] = useState(initialValues.name || '');
+  const [text, setText] = useState(initialValues.text || '');
 
   function handleLikeClick() {
     setScore(1);
@@ -18,6 +20,14 @@ export default function AddFeedbackForm({ onCancel, onSubmit, initialValues = {}
   
   function handleDislikeClick() {
     setScore(-1);
+  }
+
+  function onNameChange(event) {
+    setName(event.target.value);
+  }
+    
+  function onTextChange(event) {
+    setText(event.target.value);
   }
   
   const likeClicked = score && score > 0;
@@ -52,6 +62,8 @@ export default function AddFeedbackForm({ onCancel, onSubmit, initialValues = {}
           label="Name"
           fullWidth
           margin="normal"
+          value={name}
+          onChange={onNameChange}
         />
         <TextField
           label="Your comments"
@@ -60,6 +72,8 @@ export default function AddFeedbackForm({ onCancel, onSubmit, initialValues = {}
           fullWidth
           margin="normal"
           helperText="comments are optional"
+          value={text}
+          onChange={onTextChange}
         />
       </DialogContent>
       <DialogActions>
