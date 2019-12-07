@@ -1,5 +1,6 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
+import DashboardScore from './DashboardScore';
 
 import './Dashboard.css';
 
@@ -17,7 +18,7 @@ export default function Dashboard(){
         </Typography>
       </div>
       <div className="dashboard__event-score">
-        Event Score
+        <DashboardScore/>
       </div>
     </div>
   );
