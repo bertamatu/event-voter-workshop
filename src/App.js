@@ -4,6 +4,7 @@ import VideoStream from './components/VideoStream';
 import PageBox from './layout/PageBox';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Dashboard from './components/Dashboard';
+import PageControls from './components/PageControls';
 
 import './App.css';
 
@@ -37,6 +38,7 @@ function App() {
           </div>
         </div>
       </div>
+      <PageControls/>
     </>
   );
 }
