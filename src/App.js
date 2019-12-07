@@ -5,6 +5,7 @@ import PageBox from './layout/PageBox';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Dashboard from './components/Dashboard';
 import PageControls from './components/PageControls';
+import AddFeedbackForm from './components/AddFeedbackForm';
 
 import './App.css';
 
@@ -39,6 +40,7 @@ function App() {
         </div>
       </div>
       <PageControls/>
+      <AddFeedbackForm/>
     </>
   );
 }
