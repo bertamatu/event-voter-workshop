@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -9,7 +9,19 @@ import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-export default function AddFeedbackForm({ onCancel, onSubmit }) {
+export default function AddFeedbackForm({ onCancel, onSubmit, initialValues = {} }) {
+  const [score, setScore] = useState(initialValues.score);
+
+  function handleLikeClick() {
+    setScore(1);
+  }
+  
+  function handleDislikeClick() {
+    setScore(-1);
+  }
+  
+  const likeClicked = score && score > 0;
+  const dislikeClicked = score && score < 0;  
   return (
     <Dialog
       open
@@ -21,12 +33,20 @@ export default function AddFeedbackForm({ onCancel, onSubmit }) {
       <DialogTitle id="form-dialog-title">Add Feedback</DialogTitle>
       <DialogContent>
         <div>
-          <IconButton color={undefined} aria-label="Like">
-           <ThumbUpIcon />
-         </IconButton>
-         <IconButton color={undefined} aria-label="Dislike">
-           <ThumbDownIcon />
-         </IconButton>
+        <IconButton 
+          aria-label="Like" 
+          color={likeClicked ? "primary" : undefined}
+          onClick={handleLikeClick}
+        >
+          <ThumbUpIcon />
+        </IconButton>
+          <IconButton 
+            aria-label="Dislike" 
+            color={dislikeClicked ? "primary" : undefined}
+            onClick={handleDislikeClick}
+          >
+            <ThumbDownIcon />
+          </IconButton>
         </div>
         <TextField
           label="Name"
