@@ -2,6 +2,7 @@ import React from 'react';
 import FeedbackList from './components/FeedbackList';
 import VideoStream from './components/VideoStream';
 import PageBox from './layout/PageBox';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 import './App.css';
 
@@ -12,6 +13,8 @@ function App() {
     ];
   const eventId = 'WUWz6xmSzbk';
   return (
+    <>
+      <CssBaseline/>
       <div>
         <PageBox>
           <FeedbackList feedbackList={feedbackList}/>
@@ -23,6 +26,7 @@ function App() {
         </PageBox>
         <PageBox>Renginio rezultatai</PageBox>
       </div>
+    </>
   );
 }
 export default App;
