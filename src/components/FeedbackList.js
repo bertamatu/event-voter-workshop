@@ -11,17 +11,19 @@ import './FeedbackList.css';
 export default function FeedbackList({ feedbackList = [] }) {
   return (
     <List>
-      <ListItem>
+      {feedbackList.map(feedback => (
+      <ListItem key={feedback.id}>
        <ListItemAvatar>
           <Avatar>
             <ThumbUpIcon/>
           </Avatar>
         </ListItemAvatar>
         <ListItemText
-          primary="Vardas"
-          secondary="informacinis tekstas"
+          primary={feedback.name}
+          secondary={<> {feedback.datetime} / {feedback.text}</>}
         />
       </ListItem>
+      ))}
     </List>
   );
 }
