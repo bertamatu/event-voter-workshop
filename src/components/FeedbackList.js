@@ -8,7 +8,7 @@ import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 
 import './FeedbackList.css';
 
-export default function FeedbackList() {
+export default function FeedbackList({ feedbackList = [] }) {
   return (
     <List>
       <ListItem>
