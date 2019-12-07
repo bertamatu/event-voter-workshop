@@ -15,16 +15,24 @@ function App() {
   return (
     <>
       <CssBaseline/>
-      <div>
-        <PageBox>
-          <FeedbackList feedbackList={feedbackList}/>
-        </PageBox>
-        <PageBox>
-          <VideoStream
-            videoUrl={`https://www.youtube.com/embed/${eventId}?controls=0`}
-          />
-        </PageBox>
-        <PageBox>Renginio rezultatai</PageBox>
+      <div className="main-content">
+        <div className="main-content__left">
+          <PageBox>
+            <FeedbackList feedbackList={feedbackList}/>
+          </PageBox>
+        </div>
+        <div className="main-content__right">
+          <div className="sub-section">
+            <PageBox>
+              <VideoStream
+                videoUrl={`https://www.youtube.com/embed/${eventId}?controls=0`}
+              />
+            </PageBox>
+          </div>
+          <div className="sub-section">
+            <PageBox>Renginio rezultatai</PageBox>
+          </div>
+        </div>
       </div>
     </>
   );

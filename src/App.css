@@ -1,3 +1,25 @@
 body {
   background-color: #fafafa;
 }
+
+.main-content {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+.main-content__left {
+  height: 100%;
+  width: 50%;
+  overflow: scroll;
+}
+
+.main-content__right {
+  height: 100%;
+  width: 50%;
+}
+
+.sub-section {
+  width: 100%;
+  overflow: scroll;
+}
