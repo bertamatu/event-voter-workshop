@@ -4,10 +4,11 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-export default function AddFeedbackForm() {
+export default function AddFeedbackForm({ onCancel, onSubmit }) {
   return (
     <Dialog
       open
+      onClose={onCancel}
       aria-labelledby="form-dialog-title"
       maxWidth="sm"
       fullWidth={true}
