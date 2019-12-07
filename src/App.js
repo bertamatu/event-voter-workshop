@@ -3,6 +3,7 @@ import FeedbackList from './components/FeedbackList';
 import VideoStream from './components/VideoStream';
 import PageBox from './layout/PageBox';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Dashboard from './components/Dashboard';
 
 import './App.css';
 
@@ -30,7 +31,9 @@ function App() {
             </PageBox>
           </div>
           <div className="sub-section">
-            <PageBox>Renginio rezultatai</PageBox>
+            <PageBox>
+              <Dashboard/>
+            </PageBox>
           </div>
         </div>
       </div>
